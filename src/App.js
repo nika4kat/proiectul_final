@@ -17,7 +17,7 @@ function App() {
 				<div style={{ marginTop: "100px" }}>
 					<Switch>
 						<Route path='/' element={<Home />}></Route>
-						<Route path='/produse/:productId' element={<Produse />}></Route>
+						<Route path='/produse' element={<Produse />}></Route>
 						<Route path='/wishlist' element={<Wishlist />}></Route>
 					</Switch>
 				</div>

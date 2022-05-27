@@ -1,0 +1,10 @@
+.categories div {
+    width: 150px;
+    cursor: pointer;
+    color: black;
+    margin-left: 15px;
+}
+
+.categories div:hover {
+   color: silver;
+}
