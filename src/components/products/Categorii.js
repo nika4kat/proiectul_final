@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import DouzeciDeProduse from "./DouzeciDeProduse";
 import "./Categorii.css";
-import Search from "./Search";
 
 export class Categorii extends Component {
 	constructor(props) {
@@ -29,13 +28,12 @@ export class Categorii extends Component {
 	}
 	render() {
 		return (
-			<div>
+			<div className='products_main'>
 				<div className='categories'>
 					{this.state.categories.map((e) => (
 						<div key={e.key}> {e.name}</div>
 					))}
 				</div>
-				<Search />
 				<DouzeciDeProduse />
 			</div>
 		);
