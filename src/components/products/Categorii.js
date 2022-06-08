@@ -24,6 +24,7 @@ export class Categorii extends Component {
 					name: "Women's clothing",
 				},
 			],
+			selectedCategory: "",
 		};
 	}
 	render() {
@@ -31,10 +32,17 @@ export class Categorii extends Component {
 			<div className='products_main'>
 				<div className='categories'>
 					{this.state.categories.map((e) => (
-						<div key={e.key}> {e.name}</div>
+						<div
+							onClick={() => {
+								this.setState({ selectedCategory: e.name });
+							}}
+							key={e.key}>
+							{" "}
+							{e.name}
+						</div>
 					))}
 				</div>
-				<DouzeciDeProduse />
+				<DouzeciDeProduse selected={this.state.selectedCategory} />
 			</div>
 		);
 	}

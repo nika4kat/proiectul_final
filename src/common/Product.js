@@ -1,6 +1,19 @@
 import { Button, Col } from "reactstrap";
 
 function Product({ product }) {
+	const addToWishlist = (product) => {
+		const productStorage = localStorage.getItem("productList");
+
+		if (productStorage === null) {
+			const productList = [];
+			productList.push(product);
+			localStorage.setItem("productList", JSON.stringify(productList));
+		} else {
+			const storageArray = JSON.parse(productStorage);
+			storageArray.push(product);
+			localStorage.setItem("productList", JSON.stringify(storageArray));
+		}
+	};
 	return (
 		<Col xs='12' md='3'>
 			<img
@@ -9,7 +22,13 @@ function Product({ product }) {
 			/>
 			<h2>{product.title}</h2>
 			<p>${product.price} </p>
-			<Button color='light'>Add to wishlist</Button>
+			<Button
+				color='light'
+				onClick={() => {
+					addToWishlist(product);
+				}}>
+				Add to wishlist
+			</Button>
 		</Col>
 	);
 }

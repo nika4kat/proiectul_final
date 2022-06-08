@@ -4,7 +4,7 @@ import { Container, Row } from "reactstrap";
 import Search from "./Search";
 import "./DouzeciDeProduse.css";
 
-function DouzeciDeProduse() {
+function DouzeciDeProduse({ selected }) {
 	const [products, setProducts] = useState(null);
 	const [searchValue, setSearchValue] = useState(null);
 
@@ -12,7 +12,11 @@ function DouzeciDeProduse() {
 		const responseData = await fetch("https://fakestoreapi.com/products");
 		const apiProducts = await responseData.json();
 		console.log(apiProducts);
-		setProducts(apiProducts);
+		if (!apiProducts.length) {
+			setProducts([apiProducts]);
+		} else {
+			setProducts(apiProducts);
+		}
 	};
 
 	const onSearch = (search) => {
@@ -21,10 +25,36 @@ function DouzeciDeProduse() {
 
 	const filterBySearch = (arrayProduct, searchValue) => {
 		if (searchValue === null) return arrayProduct;
-		return arrayProduct.filter((products) => {
-			return products.name.includes(searchValue);
-		});
+
+		var tempPproducts = [];
+		for (let index = 0; index < arrayProduct.length; index++) {
+			if (arrayProduct[index].title.includes(searchValue)) {
+				tempPproducts.push(arrayProduct[index]);
+			}
+		}
+
+		return tempPproducts;
 	};
+	const categoryFilter = async () => {
+		const responseData = await fetch("https://fakestoreapi.com/products");
+		const apiProducts = await responseData.json();
+
+		const tempPproducts = [];
+
+		for (let index = 0; index < apiProducts.length; index++) {
+			if (apiProducts[index].category == selected.toLowerCase()) {
+				tempPproducts.push(apiProducts[index]);
+			}
+		}
+
+		setProducts(tempPproducts);
+	};
+	useEffect(() => {
+		console.log(selected);
+		if (selected !== "") {
+			categoryFilter();
+		}
+	}, [selected]);
 
 	useEffect(() => {
 		getProducts();
@@ -36,10 +66,8 @@ function DouzeciDeProduse() {
 			<Row className='product_container'>
 				{products ? (
 					<>
-						{products.map((products, index) => {
-							return (
-								<Product product={filterBySearch(products, searchValue)} />
-							);
+						{filterBySearch(products, searchValue).map((product, index) => {
+							return <Product key={index} product={product} />;
 						})}
 					</>
 				) : (

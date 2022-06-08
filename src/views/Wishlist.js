@@ -1,7 +1,9 @@
+import WischlistAdd from "../components/wishlist/WischlistAdd";
+
 function Wishlist() {
 	return (
 		<>
-			<h1>Wishlist</h1>
+			<WischlistAdd />
 		</>
 	);
 }
