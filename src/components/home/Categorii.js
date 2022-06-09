@@ -4,7 +4,7 @@ import "./Categorii.css";
 
 function Categorii() {
 	return (
-		<div className='container_categorii'>
+		<div className='container_categorii' xs='12' md='6'>
 			<div className='main_block'>
 				<img
 					className='main_img'

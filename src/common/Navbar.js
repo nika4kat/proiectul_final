@@ -13,10 +13,17 @@ function Navbar() {
 					Produse
 				</Link>
 			</div>
-			<img className='styled_logo' src={img1} />
+			<Link className='link' to='/'>
+				<img className='styled_logo' src={img1} />
+			</Link>
+
 			<div>
 				<Link className='link' to='/wishlist'>
 					Wishlist
+					<img
+						className='wish'
+						src='https://cdn-icons.flaticon.com/png/512/4991/premium/4991381.png?token=exp=1654763231~hmac=e9dba8bf45d1108d7ec344b2faaa4719'
+					/>
 				</Link>
 			</div>
 		</div>

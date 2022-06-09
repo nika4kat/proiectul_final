@@ -14,13 +14,13 @@ function CarouselContainer() {
 					<img className='d-inline w-100' src={canapeaImg} alt='First slide' />
 					<Carousel.Caption>
 						<h1>ERIS Fotoliu</h1>
-						<p>
+						<p className='description'>
 							Fotoliu Eris. Fotoliul din gama Eris este simbolul eleganței și al
 							confortului, remarcându-se plăcut în amenajarea din livingul
 							vostru. Fotoliul are forme armonioase, definite de rafinament.
 						</p>
 						<Link className='link' to='/produse'>
-							<button>Vezi articolul</button>
+							<button className='button'>Vezi articolul</button>
 						</Link>
 					</Carousel.Caption>
 				</Carousel.Item>
@@ -28,13 +28,13 @@ function CarouselContainer() {
 					<img className='d-inline w-100' src={ceasImg} alt='First slide' />
 					<Carousel.Caption>
 						<h1>CLOCK Ceas de perete</h1>
-						<p>
+						<p className='description'>
 							Ceas de perete Clock. În cazul în care aveți nevoie de un ceas
 							Clock pe peretele din dormitor sau living, acesta poate fi
 							alegerea potrivită pentru a da decorului aspectul visat.
 						</p>
 						<Link className='link' to='/produse'>
-							<button>Vezi articolul</button>
+							<button className='button'>Vezi articolul</button>
 						</Link>
 					</Carousel.Caption>
 				</Carousel.Item>
@@ -46,13 +46,13 @@ function CarouselContainer() {
 					/>
 					<Carousel.Caption>
 						<h1>CACTUS Plantă artificială</h1>
-						<p>
+						<p className='description'>
 							Plantă artificială în ghiveci plastic Cactus. Adăugați un strop de
 							culoare în case cu planta artificială, decorativă, din gama
 							Cactus.
 						</p>
 						<Link className='link' to='/produse'>
-							<button>Vezi articolul</button>
+							<button className='button'>Vezi articolul</button>
 						</Link>
 					</Carousel.Caption>
 				</Carousel.Item>

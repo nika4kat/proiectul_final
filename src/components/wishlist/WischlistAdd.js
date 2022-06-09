@@ -10,6 +10,7 @@ function WishlistAdd({ product }) {
 			return product.id !== id;
 		});
 		setProducts(filterArray);
+		localStorage.setItem("productList", JSON.stringify(filterArray));
 	};
 
 	useEffect(() => {

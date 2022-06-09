@@ -23,6 +23,7 @@ function Product({ product }) {
 			<h2>{product.title}</h2>
 			<p>${product.price} </p>
 			<Button
+				className='button'
 				color='light'
 				onClick={() => {
 					addToWishlist(product);

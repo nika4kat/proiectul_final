@@ -20,12 +20,16 @@ h3 {
     position: absolute;
     top: 60px;
     left: 50px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .main_block .main_button {
     position: absolute;
     top: 100px;
-    right: 295px;
+    right: 286px;
     font-size: 12px;
     border: none;
     background-color: rgba(239, 234, 226, 0);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+

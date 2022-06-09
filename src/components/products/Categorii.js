@@ -31,6 +31,7 @@ export class Categorii extends Component {
 		return (
 			<div className='products_main'>
 				<div className='categories'>
+					<h3>Categorii:</h3>
 					{this.state.categories.map((e) => (
 						<div
 							onClick={() => {
