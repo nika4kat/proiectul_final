@@ -23,6 +23,8 @@ function WishlistAdd({ product }) {
 	return (
 		<>
 			<Container>
+				<h1 className='text'>Wishlist</h1>
+
 				<Row>
 					{products.map((product) => {
 						return (
